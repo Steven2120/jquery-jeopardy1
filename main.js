@@ -96,6 +96,7 @@ for (const rawButton of box200) {
 
     currentAnswer = question.answer;
     currentQuestionValue = question.value;
+    console.log(currentAnswer);
   });
 }
 
@@ -110,6 +111,7 @@ for (const rawButton of box400) {
 
     currentAnswer = question.answer;
     currentQuestionValue = question.value;
+    console.log(currentAnswer);
   });
 }
 
@@ -124,6 +126,7 @@ for (const rawButton of box600) {
 
     currentAnswer = question.answer;
     currentQuestionValue = question.value;
+    console.log(currentAnswer);
   });
 }
 
@@ -138,6 +141,7 @@ for (const rawButton of box800) {
 
     currentAnswer = question.answer;
     currentQuestionValue = question.value;
+    console.log(currentAnswer);
   });
 }
 
@@ -155,7 +159,19 @@ submitButton.click(() => {
     questionAnswerDisplay.text("Correct!");
     score += Number(currentQuestionValue.slice(1));
     scoreDisplay.text(`Your Score: ${score}`);
+    inputAnswerText.val("");
+
+    // const storedScore = localStorage.getItem("storedScore");
+    // if (storedScore !== null) {
+    //   score = parseInt(storedScore);
+    // }
+
+    // localStorage.setItem("storedScore", score);
+    // console.log(localStorage.getItem("storedScore"));
   } else {
     questionAnswerDisplay.text(currentAnswer);
   }
 });
+localStorage.removeItem("storedScore");
+
+// console.log(localStorage.getItem("storedScore"));
